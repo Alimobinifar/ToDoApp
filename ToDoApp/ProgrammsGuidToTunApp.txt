@@ -1,0 +1,32 @@
+﻿How to Run the Application
+Hello! 👋
+To run this application, please follow these steps:
+
+1.Before running the application, make sure to install the following NuGet packages:
+
+Microsoft.EntityFrameworkCore:
+	Core ORM functionality for working with databases using Entity Framework.
+
+Microsoft.EntityFrameworkCore.Design:
+	Required for design-time features such as migrations and scaffolding.
+
+Microsoft.EntityFrameworkCore.SqlServer:
+	Enables Entity Framework Core to work with SQL Server databases.
+
+UUID.Serialization.Entity
+
+You can install these packages via the NuGet Package Manager or use the following commands in the Package Manager Console:
+Install-Package Microsoft.EntityFrameworkCore
+Install-Package Microsoft.EntityFrameworkCore.Design
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package UUID.Serialization.Entity
+
+2. Configure the Database
+The database configuration is located in the Data folder inside the AppDbContext.cs file.
+If you're using a local SQL Server instance, your connection string should look like this:
+optionsBuilder.UseSqlServer("Server=YourServerName;Database=YourDatabaseName;Integrated Security=True;TrustServerCertificate=True;");
+Make sure to replace YourServerName and YourDatabaseName with your actual SQL Server instance name and the desired database name.
+
+3. Application Responses
+To handle and return responses to the user, a custom ViewModel named AppResult has been used.
+This class is responsible for structuring API or service responses consistently.
